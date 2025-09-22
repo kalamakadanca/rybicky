@@ -31,7 +31,12 @@ namespace rybicky
 
         private void PinkFish_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            string url = "https://github.com/kalamakadanca/rybicky";
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
         }
     }
 }

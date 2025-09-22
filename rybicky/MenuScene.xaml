@@ -7,7 +7,7 @@
         mc:Ignorable="d">
     <Viewbox Stretch="Uniform">
         <Grid>
-            <Rectangle HorizontalAlignment="Center" Height="450" Stroke="#FF7C9CFF" VerticalAlignment="Center" Width="320" Fill="#FF5D6977"/>
+            <Rectangle HorizontalAlignment="Center" Height="450" StrokeThickness="0" VerticalAlignment="Center" Width="320" Fill="#FF99ACC3"/>
 
             <Label Content="Rybičky" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
             <Label Content="Daniela Luuová" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>

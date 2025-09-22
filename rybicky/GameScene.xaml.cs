@@ -39,5 +39,10 @@ namespace rybicky
             get { return tail.Fill; }
             set { tail.Fill = value; }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
