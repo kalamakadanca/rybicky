@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="rybicky.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rybicky"
+        mc:Ignorable="d"
+        Height="330" Width="300">
+    <Border BorderBrush="Black" BorderThickness="2">
+        <Grid Background="#FFF3E7FF">
+            <TextBlock Text="Nastavení" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,53,0,0" FontSize="20"></TextBlock>
+            <Label HorizontalAlignment="Center" Height="2" Margin="0,112,0,0" VerticalAlignment="Top" Width="300" BorderBrush="#FF4A4A4A" BorderThickness="2"/>
+            <Button Content="Zpět do menu" HorizontalAlignment="Center" Height="60" Margin="0,140,0,0" VerticalAlignment="Top" Width="170" Click="BackToMenu_Click"/>
+            <Button HorizontalAlignment="Left" Height="30" Margin="251,10,0,0" VerticalAlignment="Top" Width="30" Background="Transparent" Click="CloseSettings_Click">
+                <Image Source="Image/close.png" Width="25" Height="25" ></Image>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

@@ -40,9 +40,9 @@ namespace rybicky
             set { tail.Fill = value; }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Settings_Click(object sender, RoutedEventArgs e)
         {
-
+            SceneContainer.Content = new Settings();
         }
     }
 }
