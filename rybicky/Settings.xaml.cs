@@ -33,5 +33,15 @@ namespace rybicky
         {
             if (this.Parent is ContentControl parent) parent.Content = null;
         }
+
+        private void Fish_Click(object sender, RoutedEventArgs e)
+        {
+            string url = "https://github.com/kalamakadanca/rybicky";
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
     }
 }

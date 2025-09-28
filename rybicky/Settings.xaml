@@ -10,10 +10,41 @@
         <Grid Background="#FFF3E7FF">
             <TextBlock Text="Nastavení" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,53,0,0" FontSize="20"></TextBlock>
             <Label HorizontalAlignment="Center" Height="2" Margin="0,112,0,0" VerticalAlignment="Top" Width="300" BorderBrush="#FF4A4A4A" BorderThickness="2"/>
-            <Button Content="Zpět do menu" HorizontalAlignment="Center" Height="60" Margin="0,140,0,0" VerticalAlignment="Top" Width="170" Click="BackToMenu_Click"/>
+            <Button Content="Zpět do menu" HorizontalAlignment="Center" Height="70" Margin="0,151,0,0" VerticalAlignment="Top" Width="160" Click="BackToMenu_Click"/>
             <Button HorizontalAlignment="Left" Height="30" Margin="251,10,0,0" VerticalAlignment="Top" Width="30" Background="Transparent" Click="CloseSettings_Click">
                 <Image Source="Image/close.png" Width="25" Height="25" ></Image>
             </Button>
+            <TextBlock HorizontalAlignment="Center" Margin="0,248,0,0" TextWrapping="Wrap" Text="Líbí se vám hra? Nezapomeňte dát hvězdičku na githubu!" VerticalAlignment="Top" TextAlignment="Center"/>
+
+            <Canvas Width="199" Height="103" Margin="131,243,-34,-20" MouseLeftButtonDown="Fish_Click" Cursor="Hand" >
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+                </Canvas.LayoutTransform>
+                <Polygon Points="10, 110 60, 10 110, 110" Fill="Orchid" Stroke="Black" StrokeThickness="1" Canvas.Top="-8" Canvas.Left="111" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Polygon.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Polygon.RenderTransform>
+                </Polygon>
+                <Ellipse Stroke="Black" Width="140" Height="100" Fill="Orchid" StrokeThickness="1" Canvas.Left="59" Canvas.Top="2" />
+                <Ellipse Stroke="Black" StrokeThickness="1" Fill="#FFFFFEE5" Width="25" Height="25" Canvas.Left="155" Canvas.Top="35"/>
+                <Ellipse Stroke="Black" StrokeThickness="1" Fill="Black" Width="15" Height="15" Canvas.Left="160" Canvas.Top="40"/>
+            </Canvas>
+
+            <Canvas Width="199" Height="103" Margin="-47,243,144,-20" MouseLeftButtonDown="Fish_Click" Cursor="Hand" >
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+                </Canvas.LayoutTransform>
+                <Polygon Points="10, 110 60, 10 110, 110" Fill="#FF70DA98" Stroke="Black" StrokeThickness="1" Canvas.Top="-8" Canvas.Left="111" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Polygon.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Polygon.RenderTransform>
+                </Polygon>
+                <Ellipse Stroke="Black" Width="140" Height="100" Fill="#FF70DA98" StrokeThickness="1" Canvas.Left="59" Canvas.Top="2" />
+                <Ellipse Stroke="Black" StrokeThickness="1" Fill="#FFFFFEE5" Width="25" Height="25" Canvas.Left="155" Canvas.Top="35"/>
+                <Ellipse Stroke="Black" StrokeThickness="1" Fill="Black" Width="15" Height="15" Canvas.Left="160" Canvas.Top="40"/>
+            </Canvas>
+
+
         </Grid>
     </Border>
 </UserControl>
