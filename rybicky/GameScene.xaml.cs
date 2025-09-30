@@ -115,8 +115,8 @@ namespace rybicky
             if (GameCanvas.ActualHeight < 60) return;
 
             Random random = new Random();
-            double gapHeight = 55;
-            double gapY = random.Next(5, (int)(GameCanvas.ActualHeight - gapHeight));
+            double gapHeight = 60;
+            double gapY = random.Next(20, (int)(GameCanvas.ActualHeight - gapHeight - 15));
             Rectangle gap = new Rectangle
             {
                 Width = 30,
@@ -171,7 +171,7 @@ namespace rybicky
             }
 
             double fishTop = Canvas.GetTop(fish);
-            Canvas.SetTop(fish, fishTop + fishVelocityY);
+            if (fishTop + fishVelocityY > 0 && fishTop + fish.Height * 0.3 + fishVelocityY < GameCanvas.ActualHeight - fish.Height * 0.3) Canvas.SetTop(fish, fishTop + fishVelocityY);
             fishVelocityY = 0;
         }
 
