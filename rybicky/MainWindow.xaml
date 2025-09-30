@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rybicky"
         mc:Ignorable="d"
-        Title="Rybičky" Height="450" Width="800">
+        Title="UnFlappy Fish" Height="450" Width="800">
     <Grid Background="#FFD2EEFF">
         <ContentControl x:Name="MainContent"/>
     </Grid>

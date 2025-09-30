@@ -45,34 +45,33 @@ namespace rybicky
             selectedBodyColor = Brushes.Orchid;
             selectedTailColor = Brushes.Orchid;
 
-            start_game.Visibility = Visibility.Visible;
-
             pink_border.BorderBrush = Brushes.DeepPink;
             orange_border.BorderBrush = Brushes.Transparent;
             green_border.BorderBrush = Brushes.Transparent;
+
+            start_game.Visibility = Visibility.Visible;
         }
         private void OrangeFish_Click(object sender, RoutedEventArgs e)
         {
             selectedBodyColor = Brushes.DarkOrange;
             selectedTailColor = Brushes.DarkOrange;
 
-            start_game.Visibility = Visibility.Visible;
-
             orange_border.BorderBrush = Brushes.DarkOrange;
             green_border.BorderBrush = Brushes.Transparent;
             pink_border.BorderBrush = Brushes.Transparent;
+
+            start_game.Visibility = Visibility.Visible;
         }
         private void GreenFish_Click(object sender, RoutedEventArgs e)
         {
             selectedBodyColor = Brushes.DarkOliveGreen;
             selectedTailColor = Brushes.DarkOliveGreen;
 
-            start_game.Visibility = Visibility.Visible;
-
             green_border.BorderBrush = Brushes.DarkOliveGreen;
             orange_border.BorderBrush = Brushes.Transparent;
             pink_border.BorderBrush = Brushes.Transparent;
 
+            start_game.Visibility = Visibility.Visible;
         }
     }
 }

@@ -17,23 +17,41 @@ using System.Windows.Threading;
 
 namespace rybicky
 {
-    /// <summary>
-    /// Interakční logika pro GameScene.xaml
-    /// </summary>
     public partial class GameScene : UserControl
     {
-        private DispatcherTimer gameTimer;
 
         public GameScene()
         {
             InitializeComponent();
 
+            this.KeyDown += GameScene_KeyDown;
+            this.KeyUp += GameScene_KeyUp;
+
+            // Initial pipe
             CreatePipe(800);
 
-            gameTimer = new DispatcherTimer();
-            gameTimer.Interval = TimeSpan.FromMilliseconds(20);
-            gameTimer.Tick += GameLoop;
-            gameTimer.Start();
+            CompositionTarget.Rendering += GameLoop;
+        }
+
+        private double fishVelocityY = 0;
+        // moving fish up and down
+        private void GameScene_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.S)
+            {
+                fishVelocityY += 15;
+            }
+            else if (e.Key == Key.W)
+            {
+                fishVelocityY -= 15;
+            }
+        }
+        private void GameScene_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.S || e.Key == Key.W)
+            {
+                fishVelocityY = 0;
+            }
         }
 
         // changing fish color
@@ -62,6 +80,11 @@ namespace rybicky
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             PositionFish();
+
+            // focus on the game scene to capture key events
+            this.Focusable = true;
+            this.Focus();
+            Keyboard.Focus(this);
         }
         private void PositionFish()
         {
@@ -92,11 +115,12 @@ namespace rybicky
             if (GameCanvas.ActualHeight < 60) return;
 
             Random random = new Random();
-            double gapY = random.Next(5, (int)(GameCanvas.ActualHeight - 5));
+            double gapHeight = 55;
+            double gapY = random.Next(5, (int)(GameCanvas.ActualHeight - gapHeight));
             Rectangle gap = new Rectangle
             {
                 Width = 30,
-                Height = 50,
+                Height = gapHeight,
                 Fill = Brushes.FloralWhite,
             };
             Grid.SetRow(gap, 1);
@@ -110,7 +134,7 @@ namespace rybicky
         }
 
 
-        private double pipeSpeed = 2;
+        
         private List<(Rectangle Top, Rectangle Gap)> pipes = new List<(Rectangle, Rectangle)>();
 
         private void GameLoop(object sender, EventArgs e)
@@ -145,7 +169,13 @@ namespace rybicky
             {
                 CreatePipe(800);
             }
+
+            double fishTop = Canvas.GetTop(fish);
+            Canvas.SetTop(fish, fishTop + fishVelocityY);
+            fishVelocityY = 0;
         }
+
+        private double pipeSpeed = 0.5;
 
         public void SetPipeSpeed(double speed)
         {

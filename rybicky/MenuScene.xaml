@@ -9,9 +9,9 @@
         <Grid>
             <Rectangle HorizontalAlignment="Center" Height="450" StrokeThickness="0" VerticalAlignment="Center" Width="320" Fill="#FF99ACC3"/>
 
-            <Label Content="Rybičky" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+            <Label Content="UnFlappy Fish" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
             <Label Content="Daniela Luuová" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <Button Content="Začni hru" HorizontalAlignment="Center" Height="140" Margin="0,180,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click" Cursor="Hand" Background="#FFFFCCFF"/>
+            <Button Content="Start" HorizontalAlignment="Center" Height="140" Margin="0,180,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click" Cursor="Hand" Background="#FFFFCCFF" FontSize="36" FontFamily="Dubai"/>
 
             <Canvas Width="199" Height="103" Margin="352,39,-231,308" MouseLeftButtonDown="PinkFish_Click" Cursor="Hand" >
                 <Canvas.LayoutTransform>

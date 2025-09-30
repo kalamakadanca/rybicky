@@ -14,7 +14,7 @@
                 <RowDefinition Height="15*"/>
             </Grid.RowDefinitions>
 
-            <Rectangle StrokeThickness="1" Grid.Row="1" Stroke="DarkBlue" Fill="LightBlue" />
+            <Rectangle StrokeThickness="1" Grid.Row="1" Stroke="DarkBlue" Fill="LightBlue"/>
             <Rectangle Grid.Row="2" Fill="SandyBrown"></Rectangle>
             <Border x:Name="pink_border" Grid.Row="1" Width="119" Height="63" Margin="1,100,410,130" BorderBrush="Transparent" BorderThickness="2" MouseLeftButtonDown="PinkFish_Click" Cursor="Hand">
                 <Canvas x:Name="pink_fish" Width="199" Height="103">
