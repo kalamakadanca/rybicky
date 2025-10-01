@@ -6,39 +6,41 @@
         xmlns:local="clr-namespace:rybicky"
         mc:Ignorable="d"
         Loaded="UserControl_Loaded"
-        Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="195*"/>
-        </Grid.RowDefinitions>
+        >
+    <Viewbox Stretch="Uniform">
+        <Grid Width="810" Height="450">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="195*"/>
+            </Grid.RowDefinitions>
 
 
-        <Canvas x:Name="GameCanvas" Grid.Row="1" Background="LightBlue">
-            <Canvas x:Name="fish" Width="199" Height="103" >
-                <Canvas.LayoutTransform>
-                    <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
-                </Canvas.LayoutTransform>
-                <Polygon x:Name="tail" Points="10, 110 60, 10 110, 110" Fill="Orchid" Stroke="Black" StrokeThickness="1" Canvas.Top="-8" Canvas.Left="111" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Polygon.RenderTransform>
-                        <RotateTransform Angle="90"/>
-                    </Polygon.RenderTransform>
-                </Polygon>
-                <Ellipse x:Name="body" Stroke="Black" Width="140" Height="100" Fill="Orchid" StrokeThickness="1" Canvas.Left="59" Canvas.Top="2" />
-                <Ellipse Stroke="Black" StrokeThickness="1" Fill="#FFFFFEE5" Width="25" Height="25" Canvas.Left="155" Canvas.Top="35"/>
-                <Ellipse Stroke="Black" StrokeThickness="1" Fill="Black" Width="15" Height="15" Canvas.Left="160" Canvas.Top="40"/>
+            <Canvas x:Name="GameCanvas" Grid.Row="1" Background="LightBlue">
+                <Canvas x:Name="fish" Width="199" Height="103" >
+                    <Canvas.LayoutTransform>
+                        <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
+                    </Canvas.LayoutTransform>
+                    <Polygon x:Name="tail" Points="10, 110 60, 10 110, 110" Fill="Orchid" Stroke="Black" StrokeThickness="1" Canvas.Top="-8" Canvas.Left="111" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Polygon.RenderTransform>
+                            <RotateTransform Angle="90"/>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <Ellipse x:Name="body" Stroke="Black" Width="140" Height="100" Fill="Orchid" StrokeThickness="1" Canvas.Left="59" Canvas.Top="2" />
+                    <Ellipse Stroke="Black" StrokeThickness="1" Fill="#FFFFFEE5" Width="25" Height="25" Canvas.Left="155" Canvas.Top="35"/>
+                    <Ellipse Stroke="Black" StrokeThickness="1" Fill="Black" Width="15" Height="15" Canvas.Left="160" Canvas.Top="40"/>
+                </Canvas>
+
+                <!-- pipes will be created here -->
+
             </Canvas>
 
-            <!-- pipes will be created here -->
+            <ContentControl x:Name="SceneContainer" Grid.Row="1" Width="300" Height="330">
+                <local:Settings x:Name="SettingsScene" Visibility="Collapsed"/>
+            </ContentControl>
 
-        </Canvas>
-
-        <ContentControl x:Name="SceneContainer" Grid.Row="1" Width="300" Height="330">
-            <local:Settings x:Name="SettingsScene" Visibility="Collapsed"/>
-        </ContentControl>
-        
-        <Button HorizontalAlignment="Left" Height="35" Margin="720,0,0,0" VerticalAlignment="Center" Width="50" Click="Settings_Click" Background="Transparent" BorderThickness="0" Cursor="Hand">
-            <Image Source="Image/menu.png"></Image>
-        </Button>
-    </Grid>
+            <Button HorizontalAlignment="Left" Height="35" Margin="720,0,0,0" VerticalAlignment="Center" Width="50" Click="Settings_Click" Background="Transparent" BorderThickness="0" Cursor="Hand">
+                <Image Source="Image/menu.png"></Image>
+            </Button>
+        </Grid>
+    </Viewbox>
 </UserControl>

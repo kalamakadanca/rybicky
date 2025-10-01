@@ -15,16 +15,13 @@ using System.Windows.Shapes;
 
 namespace rybicky
 {
-    /// <summary>
-    /// Interakční logika pro MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
 
-            MainContent.Content = new MenuScene();
+            SwitchToMenu();
         }
         
         public void SwitchToGame(GameScene gamescene)

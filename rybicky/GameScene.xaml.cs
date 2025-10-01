@@ -173,6 +173,31 @@ namespace rybicky
             double fishTop = Canvas.GetTop(fish);
             if (fishTop + fishVelocityY > 0 && fishTop + fish.Height * 0.3 + fishVelocityY < GameCanvas.ActualHeight - fish.Height * 0.3) Canvas.SetTop(fish, fishTop + fishVelocityY);
             fishVelocityY = 0;
+
+            // Check for collisions
+            var current_pipe_gap = pipes[0].Gap;
+            var current_pipe_top = pipes[0].Top;
+
+
+
+            // Collision detection
+            // work in progress
+            Rect fishBounds = fish.TransformToAncestor(GameCanvas).TransformBounds(new Rect(0, 0, fish.ActualWidth, fish.ActualHeight));
+            Point fishTopBorder = new Point(fishBounds.Right, fishBounds.Top);
+            Point fishBottomBorder = new Point(fishBounds.Right, fishBounds.Bottom);
+            Rect gapBounds = current_pipe_gap.TransformToAncestor(GameCanvas).TransformBounds(new Rect(0, 0, current_pipe_gap.ActualWidth, current_pipe_gap.ActualHeight));
+            Rect topBounds = current_pipe_top.TransformToAncestor(GameCanvas).TransformBounds(new Rect(0, 0, current_pipe_top.ActualWidth, current_pipe_top.ActualHeight));
+
+            if (fishBottomBorder.X <= topBounds.Right && fishBottomBorder.X >= topBounds.Left && fishTopBorder.X <= topBounds.Right && fishTopBorder.X >= topBounds.Left)
+            {
+                if(!gapBounds.Contains(fishTopBorder) || !gapBounds.Contains(fishBottomBorder)) Console.WriteLine("Collision with pipe!");
+            }
+            else
+            {
+                Console.WriteLine("No collision");
+            }
+            //                   *
+
         }
 
         private double pipeSpeed = 0.5;
